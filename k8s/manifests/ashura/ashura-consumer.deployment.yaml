@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ashura-consumer-deployment
+  labels:
+    app: ashura-consumer
+spec:
+  replicas: 1 # number of replicas to run
+  selector:
+    matchLabels:
+      app: ashura-consumer
+  template:
+    metadata:
+      labels:
+        app: ashura-consumer
+    spec:
+      initContainers:
+        - name: ashura-db-check
+          image: postgres:14
+          command: ['sh', '-c',
+            'until pg_isready 
+              -h $POSTGRES_HOST 
+              -p $POSTGRES_PORT 
+              -U $POSTGRES_USER 
+              -d $POSTGRES_DB ;
+            do 
+              echo "waiting for PostgresDB"; 
+              sleep 2; 
+            done;
+            echo "PostgresDB is ready!";'
+          ]
+          envFrom:
+            - configMapRef:
+                name: ashura-config
+      containers:
+        - name: ashura-consumer
+          image: ashura/django
+          command: ["python", "manage.py", "kafkaconsumer"]
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 250m
+              memory: 256Mi
+          envFrom:
+            - configMapRef:
+                name: ashura-config
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ashura-secret
+                  key: POSTGRES_PASSWORD

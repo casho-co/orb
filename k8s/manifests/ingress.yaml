@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: casho-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "request-id: $request_id";
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /api/ashura/
+        pathType: Prefix
+        backend:
+          service:
+            name: ashura-service
+            port:
+              number: 8000
+      - path: /api/indra/
+        pathType: Prefix
+        backend:
+          service:
+            name: indra-service
+            port:
+              number: 3000
+      - path: /api/zetsu/
+        pathType: Prefix
+        backend:
+          service:
+            name: zetsu-service
+            port:
+              number: 3010
+  ingressClassName: nginx
