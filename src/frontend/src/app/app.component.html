@@ -1,3 +1,46 @@
 <router-outlet></router-outlet>
 <button (click)="getToken()">Get Token</button>
 <button (click)="testToken()">Test Token</button>
+
+
+<!-- <router-outlet></router-outlet> -->
+
+<button (click)="openAmazon()">OPEN AMAZON</button>
+
+<button (click)="openNetflix()">OPEN NETFLIX</button>
+
+<button (click)="openUber()">OPEN UBER</button>
+
+<div style="padding-bottom: 20px" *ngIf="products.length !== 0">
+    <h1>Amazon Data</h1>
+    <div *ngFor="let product of products" class="product">
+        <img class="product-img" [src]="product.src" />
+        <div>
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-date">{{ product.date }}</div>
+        </div>
+    </div>
+</div>
+<div style="padding-bottom: 20px" *ngIf="shows.length !== 0">
+    <h1>Netflix Data</h1>
+    <ul *ngFor="let show of shows">
+        <li>
+            <h3>{{ show.name }}</h3>
+            <p>{{ show.date }}</p>
+        </li>
+    </ul>
+</div>
+<div *ngIf="rides.length !== 0">
+    <h1>Uber Data</h1>
+    <div class="rides-grid">
+        <div *ngFor="let ride of rides" class="ride-card">
+            <div class="label">From:</div>
+            <div>{{ ride?.from }}</div>
+            <div class="label">To:</div>
+            <div>{{ ride?.to }}</div>
+            <div class="label">Date:</div>
+            <div>{{ ride.date }}</div>
+            <div *ngIf="ride?.status" class="status cancelled">{{ ride.status }}</div>
+        </div>
+    </div>
+</div>
