@@ -1,0 +1,164 @@
+:root {
+  --background-primary: #fff;
+  --background-secondary: #eaeaf3;
+  --background-inverse-primary: #000000;
+  --background-inverse-secondary: #171717;
+  --background-brand: #6c4efe;
+  --background-negative: #da1e28;
+  --background-warning: #f59e0b;
+  --background-positive: #10b981;
+  --background-light-brand: #fff0f4;
+  --background-light-negative: #fff1f1;
+  --background-light-warning: #fffbeb;
+  --background-light-positive: #ecfdf5;
+  --background-overlay-dark: #0000004d;
+  --background-gradient: linear-gradient(309deg, #6c4efe 0%, #1fd9f2 100%);
+  --background-pressed: #553dca;
+  --background-pressed-secondary: #e5e5e5;
+
+  --border-primary: #e5e5e5;
+  --border-selected: #171717;
+  --border-inverse: #262626;
+  --border-brand: #6c4efe;
+  --border-negative: #da1e28;
+  --border-warning: #f59e0b;
+  --border-postive: #10b981;
+
+  --content-primary: #171717;
+  --content-secondary: #737373;
+  --content-tertiary: #d4d4d4;
+  --content-inactive: #a3a3a3;
+  --content-inversePrimary: #eaeaf3;
+  --content-brand: #6c4efe;
+  --content-negative: #da1e28;
+  --content-warning: #f59e0b;
+  --content-postive: #10b981;
+}
+
+.background-primary {
+  background-color: var(--background-primary);
+}
+
+.background-secondary {
+  background-color: var(--background-secondary);
+}
+
+.background-inverse-primary {
+  background-color: var(--background-inverse-primary);
+}
+
+.background-inverse-secondary {
+  background-color: var(--background-inverse-secondary);
+}
+
+.background-brand {
+  background-color: var(--background-brand);
+}
+
+.background-negative {
+  background-color: var(--background-negative);
+}
+
+.background-warning {
+  background-color: var(--background-warning);
+}
+
+.background-positive {
+  background-color: var(--background-positive);
+}
+
+.background-light-brand {
+  background-color: var(--background-light-brand);
+}
+
+.background-light-negative {
+  background-color: var(--background-light-negative);
+}
+
+.background-light-warning {
+  background-color: var(--background-light-warning);
+}
+
+.background-light-positive {
+  background-color: var(--background-light-positive);
+}
+
+.background-overlay-dark {
+  background-color: var(--background-overlay-dark);
+}
+
+.background-gradient {
+  background-color: var(--background-gradient);
+}
+
+.background-pressed {
+  background-color: var(--background-pressed);
+}
+
+.background-pressed-secondary {
+  background-color: var(--background-pressed-secondary);
+}
+
+.border-primary {
+  border-color: var(--border-primary);
+}
+
+.border-selected {
+  border-color: var(--border-selected);
+}
+
+.border-inverse {
+  border-color: var(--border-inverse);
+}
+
+.border-brand {
+  border-color: var(--border-brand);
+}
+
+.border-negative {
+  border-color: var(--border-negative);
+}
+
+.border-warning {
+  border-color: var(--border-warning);
+}
+
+.border-postive {
+  border-color: var(--border-postive);
+}
+
+.content-primary {
+  color: var(--content-primary);
+}
+
+.content-secondary {
+  color: var(--content-secondary);
+}
+
+.content-tertiary {
+  color: var(--content-tertiary);
+}
+
+.content-inactive {
+  color: var(--content-inactive);
+}
+
+.content-inverseprimary {
+  color: var(--content-inversePrimary);
+}
+
+.content-brand {
+  color: var(--content-brand);
+}
+
+.content-negative {
+  color: var(--content-negative);
+}
+
+.content-warning {
+  color: var(--content-warning);
+}
+
+.content-postive {
+  color: var(--content-postive);
+}
